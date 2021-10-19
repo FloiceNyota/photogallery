@@ -51,19 +51,14 @@ class Image(models.Model):
   def update_image(self, id, imagechange):
     self.objects.filter(id = id).update(image = imagechange)
 
-  def get_images_by_id(self, id):
-    try:
-      image = self.objects.get(id=id)
-      return image
-    except Image.DoesNotExist:
-      print('Image does not exist')
-
-  def search_image(self, category):
-    image_search = self.objects.filter(category_id__category__icontains=category)
+  @classmethod
+  def search_image(cls, category):
+    image_search = cls.objects.filter(category_id__category__icontains=category)
     return image_search
 
-  def filter_by_location(self, location):
-    image_location_search = self.objects.filter(location_id__location__icontains=location)
+  @classmethod
+  def filter_by_location(cls, location):
+    image_location_search = cls.objects.filter(location_id__location__icontains=location)
     return image_location_search
 
   class Meta:
