@@ -6,9 +6,23 @@
 
   <p>Gallery</p>
 
-  {% for photo in photos %}
-  <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class='img-fluid landingimg'>
-  {% endfor %}
+  <div id="gallerypage" class='mt-5 mb-5'>
+    <div class="container">
+      <div class="allimages" id="image-popups">
+        {% for photo in photos %}
+          <a href="{{ photo.image.url }}" class="hinge" data-effect="mfp-zoom-out" title="">
+            <div class="image m-1 m-md-3 mt-md-0">
+              <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid">
+              <div class="overlay d-flex justify-content-center align-items-center">
+                <i class="fa fa-plus"></i>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
+  
 {% endblock %}
 
