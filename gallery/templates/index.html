@@ -55,6 +55,13 @@
                 <div class="modal-content">
                   <div class="modal-body">
                     <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" id='img{{photo.id}}'  value='{{ photo.image.url }}' class="img-fluid modalsize">
+                    <div class="description">
+                      <div class="d-flex justify-content-around align-items-center">
+                        <span>Location: {{ photo.location_id }}</span>
+                        <span>Category: {{ photo.category_id }}</span>
+                      </div>
+                      <p>{{ photo.image_description }}</p>
+                    </div>
                   </div>
 
                   <div class="modal-footer">
