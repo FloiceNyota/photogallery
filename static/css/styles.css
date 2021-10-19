@@ -93,6 +93,12 @@ h2{
   opacity: 1;
 }
 
+.modalsize{
+  max-height: 80vh;
+  width: 100%; 
+  object-fit: contain;
+}
+
 @media screen and (max-width: 900px){
   [class*="col-"]{
     width: 50%;

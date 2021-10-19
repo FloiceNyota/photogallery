@@ -41,16 +41,28 @@
   <div class="container">
     <div id="gallerypage" class='mt-5 mb-5'>
       <div class="container">
-        <div class="allimages" id="image-popups">
+        <div class="allimages">
           {% for photo in photos %}
-            <a href="{{ photo.image.url }}" class="hinge" data-effect="mfp-zoom-out" title="">
-              <div class="image m-1 m-md-3 mt-md-0">
-                <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid">
-                <div class="overlay d-flex justify-content-center align-items-center">
-                  <i class="fa fa-plus"></i>
+            <div class="image mt-2 " data-toggle="modal" data-target="#modal{{photo.id}}">
+              <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid">
+              <div class="overlay d-flex justify-content-center align-items-center">
+                <i class="fa fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="modal fade" id="modal{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid modalsize">
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
-            </a>
+            </div>
           {% endfor %}
         </div>
       </div>
