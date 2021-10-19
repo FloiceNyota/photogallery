@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+
+  <h2 class='text-center'>NYOTA COLLECTIONS</h2>
+
+  
+  <div class="container">
+    <div id="gallerypage" class='mt-5 mb-5'>
+      <div class="container">
+        <div class="allimages" id="image-popups">
+          {% for photo in categorysearchresult %}
+            <a href="{{ photo.image.url }}" class="hinge" data-effect="mfp-zoom-out" title="">
+              <div class="image m-1 m-md-3 mt-md-0">
+                <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid">
+                <div class="overlay d-flex justify-content-center align-items-center">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
