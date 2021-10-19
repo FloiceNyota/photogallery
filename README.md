@@ -5,7 +5,7 @@
 
 ---
 # Description  
-This is A PhotoGallery Application that is able to display my photos for others to see. 
+This is A PhotoGallery Application that is able to display my photos for others to see with different categories and various locations. 
   
 ---
 ## User Stories  
