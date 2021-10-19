@@ -4,6 +4,11 @@
 {% block title %} {{title}} {% endblock %}
 {% block content %}
 
-<p>hello</p>
+  <p>Gallery</p>
+
+  {% for photo in photos %}
+  <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class='img-fluid landingimg'>
+  {% endfor %}
 
 {% endblock %}
+
