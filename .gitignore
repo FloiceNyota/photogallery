@@ -1,3 +1,4 @@
 envnyota/
 .env
 *.pyc
+media/
