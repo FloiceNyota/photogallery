@@ -21,9 +21,12 @@ def search(request):
     term = request.GET.get('search')
     categorysearchresult = Image.search_image(term)
     totalsearch = categorysearchresult.count()
+
+  title = 'Search ' + term
   context={
     'categorysearchresult':categorysearchresult,
     'searchTerm':term,
-    'totalsearch':totalsearch
+    'totalsearch':totalsearch,
+    'title':title
   }
   return render(request, 'searchresult.html', context)

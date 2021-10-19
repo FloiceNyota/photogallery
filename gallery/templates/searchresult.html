@@ -4,8 +4,11 @@
 {% block title %} {{title}} {% endblock %}
 {% block content %}
 
-  <h2 class='text-center'>NYOTA COLLECTIONS</h2>
 
+  <h2 class='text-center'>NYOTA COLLECTIONS</h2>
+  <div class="text-center mb-2">
+    <button onclick="window.history.back()" class="btn btn-sm btn-outline-dark"><i class="fad fa-hand-point-left"></i> Back to Home</button>
+  </div>
   <h5 class="text-center">Search Results for {{ searchTerm }}</h5>
   <h6 class='text-center'>Photos Found {{ totalsearch }}</h6>
   <div class="container">
