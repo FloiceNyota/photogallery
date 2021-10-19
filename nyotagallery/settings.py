@@ -4,6 +4,10 @@ import django_heroku
 import dj_database_url
 from decouple import config, Csv
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -22,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     'gallery',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +128,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 django_heroku.settings(locals())
+
+cloudinary.config( 
+  cloud_name = config('CLOUD_NAME'), 
+  api_key = config('API_KEY'), 
+  api_secret = config('API_SECRET') 
+)
