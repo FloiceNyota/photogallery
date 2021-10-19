@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap');
+
 *, *::after, *::before{
   margin:0;
   padding: 0;
@@ -15,6 +17,7 @@ html, body{
 
 h1,h2,h3,h4,h5,h6{
   font-weight: 600;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .col-1 {width: 8.33%;}
@@ -35,6 +38,15 @@ h1,h2,h3,h4,h5,h6{
 *************Gallery**************
 *********************************/
 
+h2{
+  margin-top: 25vh;
+  font-size: 40px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar{
+  background-color: #000080f6;
+}
 
 #gallerypage .allimages {
   column-count: 3;
