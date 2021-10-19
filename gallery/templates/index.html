@@ -6,23 +6,51 @@
 
   <h2 class='text-center'>NYOTA COLLECTIONS</h2>
 
-  <div id="gallerypage" class='mt-5 mb-5'>
-    <div class="container">
-      <div class="allimages" id="image-popups">
-        {% for photo in photos %}
-          <a href="{{ photo.image.url }}" class="hinge" data-effect="mfp-zoom-out" title="">
-            <div class="image m-1 m-md-3 mt-md-0">
-              <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid">
-              <div class="overlay d-flex justify-content-center align-items-center">
-                <i class="fa fa-plus"></i>
-              </div>
+  <div class="addons">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6 cats-loc d-flex justify-content-end align-items-center">
+          <div class="dropdown m-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fad fa-layer-group"></i> Categories 
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
             </div>
-          </a>
-        {% endfor %}
+          </div>
+
+          <div class="dropdown m-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fad fa-map-marker-alt"></i> Locations 
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="gallerypage" class='mt-5 mb-5'>
+      <div class="container">
+        <div class="allimages" id="image-popups">
+          {% for photo in photos %}
+            <a href="{{ photo.image.url }}" class="hinge" data-effect="mfp-zoom-out" title="">
+              <div class="image m-1 m-md-3 mt-md-0">
+                <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid">
+                <div class="overlay d-flex justify-content-center align-items-center">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 
-  
 {% endblock %}
 
