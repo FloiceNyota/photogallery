@@ -14,3 +14,15 @@ def index(request):
     'locations': locations
   }
   return render(request, 'index.html', context)
+
+
+def search(request):
+  if 'search' in request.GET and request.GET['search']:
+    term = request.GET.get('search')
+    categorysearchresult = Image.search_image(term)
+  
+  context={
+    'categorysearchresult':categorysearchresult,
+    'searchTerm':term
+  }
+  return render(request, 'searchresult.html', context)
