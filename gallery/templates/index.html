@@ -54,11 +54,12 @@
               <div class="modal-dialog modal-fullscreen" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
-                    <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" class="img-fluid modalsize">
+                    <img src="{{ photo.image.url }}" alt="{{ photo.image_name }}" id='img{{photo.id}}'  value='{{ photo.image.url }}' class="img-fluid modalsize">
                   </div>
 
                   <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <button class="btn" data-dismiss="modal">Close</button>
+                    <button class="btn btn-outline-secondary tocopy" data-clipboard-target="#img{{photo.id}}">Copy to ClipBoard</button>
                   </div>
                 </div>
               </div>
@@ -68,6 +69,11 @@
       </div>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+  <script>
+    new ClipboardJS('.tocopy');
+  </script>
 
 {% endblock %}
 
